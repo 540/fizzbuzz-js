@@ -1,5 +1,3 @@
-export default class FizzBuzz {
-  message() {
-    return undefined
-  }
+export var fizzBuzz = function() {
+  return undefined
 }

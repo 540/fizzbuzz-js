@@ -1,9 +1,7 @@
-import FizzBuzz from '../src/fizzbuzz'
+var myFizzBuzz = require('../src/fizzbuzz')
 
-describe('FizzBuzz', () => {
-  const fizzbuzz = new FizzBuzz()
-
-  it('example test', () => {
-    expect(fizzbuzz.message()).toEqual(undefined)
+describe('FizzBuzz', function() {
+  it('example test', function() {
+    expect(myFizzBuzz.fizzBuzz()).toEqual(undefined)
   })
 })
