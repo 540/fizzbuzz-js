@@ -1,5 +1,7 @@
-export var fizzBuzz = function(numbers) {
-  return numbers.map(function(n) {
+export var fizzBuzz = function() {
+  return Array.from({ length: 100 }, function(_, i) {
+    return i + 1
+  }).map(function(n) {
     return fizzBuzzForNumber(n)
   })
 }
