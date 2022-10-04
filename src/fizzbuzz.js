@@ -1,28 +1,29 @@
 var predicate = require('./predicate')
+
 export var createFizzBuzz = function() {
   var ruleSet = [
     {
-      predicate: (0, predicate.and)(
-        (0, predicate.isDivisibleBy)(3),
-        (0, predicate.isDivisibleBy)(5)
+      predicate: predicate.and(
+        predicate.isDivisibleBy(3),
+        predicate.isDivisibleBy(5)
       ),
       trans: function() {
         return 'FizzBuzz'
       }
     },
     {
-      predicate: (0, predicate.or)(
-        (0, predicate.isDivisibleBy)(3),
-        (0, predicate.contains)(3)
+      predicate: predicate.or(
+        predicate.isDivisibleBy(3),
+        predicate.contains(3)
       ),
       trans: function() {
         return 'Fizz'
       }
     },
     {
-      predicate: (0, predicate.or)(
-        (0, predicate.isDivisibleBy)(5),
-        (0, predicate.contains)(5)
+      predicate: predicate.or(
+        predicate.isDivisibleBy(5),
+        predicate.contains(5)
       ),
       trans: function() {
         return 'Buzz'
@@ -35,7 +36,7 @@ export var createFizzBuzz = function() {
       }
     }
   ]
-  return (0, fizzBuzz)(ruleSet)
+  return fizzBuzz(ruleSet)
 }
 
 export var fizzBuzz = function(ruleSet) {
@@ -51,4 +52,3 @@ export var fizzBuzz = function(ruleSet) {
     })
   }
 }
-
