@@ -26,7 +26,7 @@ describe('FizzBuzz', function() {
     expect(fizzbuzzNumber(15)).toEqual('FizzBuzz')
   })
   it('returns multiple numbers', function() {
-    expect((0, myFizzBuzz.fizzBuzz)().slice(0, 5)).toEqual([
+    expect(myFizzBuzz.fizzBuzz().slice(0, 5)).toEqual([
       '1',
       '2',
       'Fizz',
@@ -35,7 +35,7 @@ describe('FizzBuzz', function() {
     ])
   })
   it('returns 100 numbers', function() {
-    expect((0, myFizzBuzz.fizzBuzz)()).toHaveLength(100)
+    expect(myFizzBuzz.fizzBuzz()).toHaveLength(100)
   })
 })
 var fizzbuzzNumber = function(n) {
