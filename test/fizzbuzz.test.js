@@ -1,9 +1,37 @@
-import FizzBuzz from '../src/fizzbuzz'
+var myFizzBuzz = require('../src/fizzbuzz')
 
-describe('FizzBuzz', () => {
-  const fizzbuzz = new FizzBuzz()
-
-  it('example test', () => {
-    expect(fizzbuzz.message()).toEqual(undefined)
+describe('FizzBuzz', function() {
+  it('returns "1" for 1 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(1)).toEqual('1')
+  })
+  it('returns "2" for 2 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(2)).toEqual('2')
+  })
+  it('returns "Fizz" for 3 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(3)).toEqual('Fizz')
+  })
+  it('returns "Fizz" for 6 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(6)).toEqual('Fizz')
+  })
+  it('returns "Buzz" for 5 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(5)).toEqual('Buzz')
+  })
+  it('returns "Buzz" for 10 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(10)).toEqual('Buzz')
+  })
+  it('returns "Buzz" for 5 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(5)).toEqual('Buzz')
+  })
+  it('returns "FizzBuzz" for 15 number', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(15)).toEqual('FizzBuzz')
+  })
+  it('returns multiple numbers', function() {
+    expect((0, myFizzBuzz.fizzBuzz)(53, [1, 2, 3, 4, 5])).toEqual([
+      '1',
+      '2',
+      'Fizz',
+      '4',
+      'Buzz'
+    ])
   })
 })
