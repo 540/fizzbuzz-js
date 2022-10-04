@@ -1,0 +1,32 @@
+{
+  "name": "tdd-js",
+  "version": "1.0.0",
+  "description": "FizzBuzz kata",
+  "author": "540",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "babel-jest": "^25.1.0",
+    "@babel/preset-env": "7.8.4",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^22.21.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "~25.1.0",
+    "prettier": "^1.19.1",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "test": "jest -c jest-config.json",
+    "test:watch": "jest -c jest-config.json --watch"
+  }
+}
