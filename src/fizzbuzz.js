@@ -3,7 +3,7 @@ var predicate_1 = require('./predicate')
 export var createFizzBuzz = function() {
   var ruleSet = [
     {
-      predicate: (0, predicate_1.and)(
+      predicate:  predicate_1.and(
         predicate_1.isDivisibleBy(3),
         predicate_1.isDivisibleBy(5)
       ),
@@ -12,7 +12,7 @@ export var createFizzBuzz = function() {
       }
     },
     {
-      predicate: (0, predicate_1.or)(
+      predicate: predicate_1.or(
         predicate_1.isDivisibleBy(3),
         predicate_1.contains(3)
       ),
@@ -21,7 +21,7 @@ export var createFizzBuzz = function() {
       }
     },
     {
-      predicate: (0, predicate_1.or)(
+      predicate: predicate_1.or(
         predicate_1.isDivisibleBy(5),
         predicate_1.contains(5)
       ),
