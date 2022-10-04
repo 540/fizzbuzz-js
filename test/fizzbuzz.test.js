@@ -33,15 +33,9 @@ describe('FizzBuzz', function() {
     expect(runFizzBuzz(53)).toEqual('Buzz')
   })
   it('returns multiple numbers', function() {
-    expect(fizzBuzz(53, [1, 2, 3, 4, 5])).toEqual([
-      '1',
-      '2',
-      'Fizz',
-      '4',
-      'Buzz'
-    ])
+    expect(fizzBuzz([1, 2, 3, 4, 5])).toEqual(['1', '2', 'Fizz', '4', 'Buzz'])
   })
   var runFizzBuzz = function(n) {
-    return fizzBuzz(n, [n])[0]
+    return fizzBuzz([n])[0]
   }
 })
