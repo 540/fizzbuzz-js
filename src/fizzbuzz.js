@@ -1,36 +1,36 @@
-var predicate_1 = require('./predicate')
+var predicate = require('./predicate')
 
 export var createFizzBuzz = function() {
   var ruleSet = [
     {
-      predicate:  predicate_1.and(
-        predicate_1.isDivisibleBy(3),
-        predicate_1.isDivisibleBy(5)
+      predicate: predicate.and(
+        predicate.isDivisibleBy(3),
+        predicate.isDivisibleBy(5)
       ),
       trans: function() {
         return 'FizzBuzz'
       }
     },
     {
-      predicate: predicate_1.or(
-        predicate_1.isDivisibleBy(3),
-        predicate_1.contains(3)
+      predicate: predicate.or(
+        predicate.isDivisibleBy(3),
+        predicate.contains(3)
       ),
       trans: function() {
         return 'Fizz'
       }
     },
     {
-      predicate: predicate_1.or(
-        predicate_1.isDivisibleBy(5),
-        predicate_1.contains(5)
+      predicate: predicate.or(
+        predicate.isDivisibleBy(5),
+        predicate.contains(5)
       ),
       trans: function() {
         return 'Buzz'
       }
     },
     {
-      predicate: predicate_1.otherwise,
+      predicate: predicate.otherwise,
       trans: function(n) {
         return n.toString()
       }
