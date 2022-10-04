@@ -26,7 +26,7 @@ describe('FizzBuzz', function() {
     expect(runFizzBuzz(15)).toEqual('FizzBuzz')
   })
   it('returns multiple numbers', function() {
-    expect((0, myFizzBuzz.fizzBuzz)([1, 2, 3, 4, 5])).toEqual([
+    expect(myFizzBuzz.fizzBuzz([1, 2, 3, 4, 5])).toEqual([
       '1',
       '2',
       'Fizz',
