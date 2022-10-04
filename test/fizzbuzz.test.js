@@ -1,41 +1,44 @@
-var myFizzBuzz = require('../src/fizzbuzz')
+var fizzbuzz = require('../src/fizzbuzz')
 
 describe('FizzBuzz', function() {
-  var fizzBuzz = (0, myFizzBuzz.createFizzBuzz)()
+  var fizzBuzz = (0, fizzbuzz.createFizzBuzz)()
   it('returns "1" for 1 number', function() {
-    expect(runFizzBuzz(1)).toEqual('1')
+    expect(fizzbuzzNumber(1)).toEqual('1')
   })
   it('returns "2" for 2 number', function() {
-    expect(runFizzBuzz(2)).toEqual('2')
+    expect(fizzbuzzNumber(2)).toEqual('2')
   })
   it('returns "Fizz" for 3 number', function() {
-    expect(runFizzBuzz(3)).toEqual('Fizz')
+    expect(fizzbuzzNumber(3)).toEqual('Fizz')
   })
   it('returns "Fizz" for 6 number', function() {
-    expect(runFizzBuzz(6)).toEqual('Fizz')
+    expect(fizzbuzzNumber(6)).toEqual('Fizz')
   })
   it('returns "Buzz" for 5 number', function() {
-    expect(runFizzBuzz(5)).toEqual('Buzz')
+    expect(fizzbuzzNumber(5)).toEqual('Buzz')
   })
   it('returns "Buzz" for 10 number', function() {
-    expect(runFizzBuzz(10)).toEqual('Buzz')
+    expect(fizzbuzzNumber(10)).toEqual('Buzz')
   })
   it('returns "Buzz" for 5 number', function() {
-    expect(runFizzBuzz(5)).toEqual('Buzz')
+    expect(fizzbuzzNumber(5)).toEqual('Buzz')
   })
   it('returns "FizzBuzz" for 15 number', function() {
-    expect(runFizzBuzz(15)).toEqual('FizzBuzz')
+    expect(fizzbuzzNumber(15)).toEqual('FizzBuzz')
   })
   it('returns "Fizz" for number containing 3', function() {
-    expect(runFizzBuzz(35)).toEqual('Fizz')
+    expect(fizzbuzzNumber(35)).toEqual('Fizz')
   })
   it('returns "Buzz" for number containing 5', function() {
-    expect(runFizzBuzz(53)).toEqual('Buzz')
+    expect(fizzbuzzNumber(53)).toEqual('Buzz')
   })
   it('returns multiple numbers', function() {
-    expect(fizzBuzz([1, 2, 3, 4, 5])).toEqual(['1', '2', 'Fizz', '4', 'Buzz'])
+    expect(fizzBuzz().splice(0, 5)).toEqual(['1', '2', 'Fizz', '4', 'Buzz'])
   })
-  var runFizzBuzz = function(n) {
-    return fizzBuzz([n])[0]
+  it('returns 100 numbers', function() {
+    expect(fizzBuzz()).toHaveLength(100)
+  })
+  var fizzbuzzNumber = function(n) {
+    return fizzBuzz()[n - 1]
   }
 })

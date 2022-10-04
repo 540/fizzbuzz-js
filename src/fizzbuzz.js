@@ -1,4 +1,4 @@
-export var predicate = require('./predicate')
+var predicate = require('./predicate')
 export var createFizzBuzz = function() {
   var ruleSet = [
     {
@@ -39,13 +39,15 @@ export var createFizzBuzz = function() {
 }
 
 export var fizzBuzz = function(ruleSet) {
-  return function(numbers) {
-    return numbers.map(function(n2) {
+  return function() {
+    return Array.from({ length: 100 }, function(_, i) {
+      return i + 1
+    }).map(function(n) {
       return ruleSet
         .find(function(rule) {
-          return rule.predicate(n2)
+          return rule.predicate(n)
         })
-        .trans(n2)
+        .trans(n)
     })
   }
 }
