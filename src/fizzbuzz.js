@@ -4,8 +4,8 @@ export var createFizzBuzz = function() {
   var ruleSet = [
     {
       predicate: (0, predicate_1.and)(
-        (0, predicate_1.isDivisibleBy)(3),
-        (0, predicate_1.isDivisibleBy)(5)
+        predicate_1.isDivisibleBy(3),
+        predicate_1.isDivisibleBy(5)
       ),
       trans: function() {
         return 'FizzBuzz'
@@ -13,8 +13,8 @@ export var createFizzBuzz = function() {
     },
     {
       predicate: (0, predicate_1.or)(
-        (0, predicate_1.isDivisibleBy)(3),
-        (0, predicate_1.contains)(3)
+        predicate_1.isDivisibleBy(3),
+        predicate_1.contains(3)
       ),
       trans: function() {
         return 'Fizz'
@@ -22,8 +22,8 @@ export var createFizzBuzz = function() {
     },
     {
       predicate: (0, predicate_1.or)(
-        (0, predicate_1.isDivisibleBy)(5),
-        (0, predicate_1.contains)(5)
+        predicate_1.isDivisibleBy(5),
+        predicate_1.contains(5)
       ),
       trans: function() {
         return 'Buzz'
@@ -36,7 +36,7 @@ export var createFizzBuzz = function() {
       }
     }
   ]
-  return (0, exports.fizzBuzz)(ruleSet)
+  return fizzBuzz(ruleSet)
 }
 
 export var fizzBuzz = function(ruleSet) {
