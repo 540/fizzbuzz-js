@@ -1,4 +1,4 @@
-var myFizzBuzz = require('../src/fizzbuzz')
+const myFizzBuzz = require('../src/fizzbuzz')
 
 describe('FizzBuzz', function() {
   it('returns "1" for 1 number', function() {
@@ -38,6 +38,6 @@ describe('FizzBuzz', function() {
     expect(myFizzBuzz.fizzBuzz()).toHaveLength(100)
   })
 })
-var fizzbuzzNumber = function(n) {
-  return (0, myFizzBuzz.fizzBuzz)()[n - 1]
+const fizzbuzzNumber = function(n) {
+  return myFizzBuzz.fizzBuzz()[n - 1]
 }
