@@ -1,10 +1,10 @@
-export var fizzBuzz = function(numbers) {
+export const fizzBuzz = function(numbers) {
   return numbers.map(function(n) {
     return fizzBuzzForNumber(n)
   })
 }
 
-var fizzBuzzForNumber = function(aNumber) {
+const fizzBuzzForNumber = function(aNumber) {
   if (isDivisibleBy3(aNumber) && isDivisibleBy5(aNumber)) {
     return 'FizzBuzz'
   }
@@ -16,10 +16,10 @@ var fizzBuzzForNumber = function(aNumber) {
   }
   return aNumber.toString()
 }
-var isDivisibleBy = function(divisor) {
+const isDivisibleBy = function(divisor) {
   return function(n) {
     return n % divisor === 0
   }
 }
-var isDivisibleBy3 = isDivisibleBy(3)
-var isDivisibleBy5 = isDivisibleBy(5)
+const isDivisibleBy3 = isDivisibleBy(3)
+const isDivisibleBy5 = isDivisibleBy(5)
