@@ -1,7 +1,7 @@
-var myFizzBuzz = require('../src/fizzbuzz')
+const myFizzBuzz = require('../src/fizzbuzz')
 
 describe('FizzBuzz', function() {
-  var fizzBuzz = myFizzBuzz.createFizzBuzz()
+  const fizzBuzz = myFizzBuzz.createFizzBuzz()
   it('returns "1" for 1 number', function() {
     expect(runFizzBuzz(1)).toEqual('1')
   })
@@ -41,7 +41,7 @@ describe('FizzBuzz', function() {
       'Buzz'
     ])
   })
-  var runFizzBuzz = function(n) {
+  const runFizzBuzz = function(n) {
     return fizzBuzz(n, [n])[0]
   }
 })
