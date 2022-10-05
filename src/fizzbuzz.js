@@ -1,4 +1,4 @@
-export var fizzBuzz = function(aNumber) {
+export const fizzBuzz = function(aNumber) {
   if (isDivisibleBy3(aNumber) && isDivisibleBy5(aNumber)) {
     return 'FizzBuzz'
   }
@@ -11,10 +11,10 @@ export var fizzBuzz = function(aNumber) {
   return aNumber.toString()
 }
 
-var isDivisibleBy = function(divisor) {
+const isDivisibleBy = function(divisor) {
   return function(n) {
     return n % divisor === 0
   }
 }
-var isDivisibleBy3 = isDivisibleBy(3)
-var isDivisibleBy5 = isDivisibleBy(5)
+const isDivisibleBy3 = isDivisibleBy(3)
+const isDivisibleBy5 = isDivisibleBy(5)
