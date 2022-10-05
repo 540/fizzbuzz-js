@@ -1,4 +1,4 @@
-var myFizzBuzz = require('../src/fizzbuzz')
+const myFizzBuzz = require('../src/fizzbuzz')
 
 describe('FizzBuzz', function() {
   it('example test', function() {

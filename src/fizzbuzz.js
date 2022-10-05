@@ -1,3 +1,3 @@
-export var fizzBuzz = function() {
+export const fizzBuzz = function() {
   return undefined
 }
