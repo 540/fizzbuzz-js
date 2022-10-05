@@ -1,6 +1,6 @@
-export var predicate = require('./predicate')
-export var createFizzBuzz = function() {
-  var ruleSet = [
+export const predicate = require('./predicate')
+export const createFizzBuzz = function() {
+  const ruleSet = [
     {
       predicate: predicate.and(
         predicate.isDivisibleBy(3),
@@ -38,7 +38,7 @@ export var createFizzBuzz = function() {
   return fizzBuzz(ruleSet)
 }
 
-export var fizzBuzz = function(ruleSet) {
+export const fizzBuzz = function(ruleSet) {
   return function(numbers) {
     return numbers.map(function(n2) {
       return ruleSet
@@ -49,4 +49,3 @@ export var fizzBuzz = function(ruleSet) {
     })
   }
 }
-
