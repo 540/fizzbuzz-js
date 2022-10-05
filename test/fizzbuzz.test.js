@@ -1,7 +1,7 @@
-var fizzbuzz = require('../src/fizzbuzz')
+const fizzbuzz = require('../src/fizzbuzz')
 
 describe('FizzBuzz', function() {
-  var fizzBuzz =  fizzbuzz.createFizzBuzz()
+  const fizzBuzz = fizzbuzz.createFizzBuzz()
   it('returns "1" for 1 number', function() {
     expect(fizzbuzzNumber(1)).toEqual('1')
   })
