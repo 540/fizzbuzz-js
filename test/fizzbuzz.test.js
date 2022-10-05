@@ -35,6 +35,6 @@ describe('FizzBuzz', function() {
     ])
   })
 })
-var runFizzBuzz = function(n) {
+const runFizzBuzz = function(n) {
   return myFizzBuzz.fizzBuzz([n])[0]
 }
