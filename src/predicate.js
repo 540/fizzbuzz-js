@@ -1,18 +1,11 @@
-export const isDivisibleBy = function(divisor) {
-  return function(n) {
-    return n % divisor === 0
-  }
-}
+export const isDivisibleBy = divisor => n => n % divisor === 0
 
-export const contains = function(search) {
-  return function(n) {
-    return n.toString().search(search.toString()) === 0
-  }
-}
+export const contains = search => n =>
+  n.toString().search(search.toString()) === 0
 
 export const and = function() {
-  var predicates = []
-  for (var _i = 0; _i < arguments.length; _i++) {
+  let predicates = []
+  for (let _i = 0; _i < arguments.length; _i++) {
     predicates[_i] = arguments[_i]
   }
   return function(n) {
@@ -23,8 +16,8 @@ export const and = function() {
 }
 
 export const or = function() {
-  var predicates = []
-  for (var _i = 0; _i < arguments.length; _i++) {
+  let predicates = []
+  for (let _i = 0; _i < arguments.length; _i++) {
     predicates[_i] = arguments[_i]
   }
   return function(n) {
@@ -34,6 +27,4 @@ export const or = function() {
   }
 }
 
-export const otherwise = function() {
-  return true
-}
+export const otherwise = () => true
