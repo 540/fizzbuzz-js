@@ -1,14 +1,12 @@
-export const fizzBuzz = function(aNumber, numbers) {
+export const fizzBuzz = (aNumber, numbers) => {
   if (numbers === undefined) {
     return fizzBuzzForNumber(aNumber)
   } else {
-    return numbers.map(function(n) {
-      return fizzBuzzForNumber(n)
-    })
+    return numbers.map(n => fizzBuzzForNumber(n))
   }
 }
 
-const fizzBuzzForNumber = function(aNumber) {
+const fizzBuzzForNumber = aNumber => {
   if (isDivisibleBy3(aNumber) && isDivisibleBy5(aNumber)) {
     return 'FizzBuzz'
   }
@@ -20,10 +18,6 @@ const fizzBuzzForNumber = function(aNumber) {
   }
   return aNumber.toString()
 }
-const isDivisibleBy = function(divisor) {
-  return function(n) {
-    return n % divisor === 0
-  }
-}
+const isDivisibleBy = divisor => number => number % divisor === 0
 const isDivisibleBy3 = isDivisibleBy(3)
 const isDivisibleBy5 = isDivisibleBy(5)
