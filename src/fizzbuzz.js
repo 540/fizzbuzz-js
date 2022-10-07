@@ -1,58 +1,37 @@
 const predicate = require('./predicate')
 
-export const createFizzBuzz = function() {
+export const createFizzBuzz = () => {
   const ruleSet = [
     {
       predicate: predicate.and(
         predicate.isDivisibleBy(3),
         predicate.isDivisibleBy(5)
       ),
-      trans: function() {
-        return 'FizzBuzz'
-      }
+      trans: () => 'FizzBuzz'
     },
     {
       predicate: predicate.or(
         predicate.isDivisibleBy(3),
         predicate.contains(3)
       ),
-      trans: function() {
-        return 'Fizz'
-      }
+      trans: () => 'Fizz'
     },
     {
       predicate: predicate.or(
         predicate.isDivisibleBy(5),
         predicate.contains(5)
       ),
-      trans: function() {
-        return 'Buzz'
-      }
+      trans: () => 'Buzz'
     },
     {
       predicate: predicate.otherwise,
-      trans: function(n) {
-        return n.toString()
-      }
+      trans: n => n.toString()
     }
   ]
   return fizzBuzz(ruleSet)
 }
 
-export const fizzBuzz = function(ruleSet) {
-  return function(n, numbers) {
-    return numbers === undefined
-      ? ruleSet
-          .find(function(rule) {
-            return rule.predicate(n)
-          })
-          .trans(n)
-      : numbers.map(function(n2) {
-          return ruleSet
-            .find(function(rule) {
-              return rule.predicate(n2)
-            })
-            .trans(n2)
-        })
-  }
-}
+export const fizzBuzz = ruleSet => (n, numbers) =>
+  numbers === undefined
+    ? ruleSet.find(rule => rule.predicate(n)).trans(n)
+    : numbers.map(n2 => ruleSet.find(rule => rule.predicate(n2)).trans(n2))
