@@ -1,39 +1,22 @@
-export var isDivisibleBy = function(divisor) {
-  return function(n) {
-    return n % divisor === 0
-  }
-}
+export var isDivisibleBy = divisor => n => n % divisor === 0
 
-export var contains = function(search) {
-  return function(n) {
-    return n.toString().search(search.toString()) === 0
-  }
-}
+export var contains = search => n =>
+  n.toString().search(search.toString()) === 0
 
 export var and = function() {
-  var predicates = []
-  for (var _i = 0; _i < arguments.length; _i++) {
+  let predicates = []
+  for (let _i = 0; _i < arguments.length; _i++) {
     predicates[_i] = arguments[_i]
   }
-  return function(n) {
-    return predicates.every(function(predicate) {
-      return predicate(n)
-    })
-  }
+  return n => predicates.every(predicate => predicate(n))
 }
 
 export var or = function() {
-  var predicates = []
-  for (var _i = 0; _i < arguments.length; _i++) {
+  let predicates = []
+  for (let _i = 0; _i < arguments.length; _i++) {
     predicates[_i] = arguments[_i]
   }
-  return function(n) {
-    return predicates.some(function(predicate) {
-      return predicate(n)
-    })
-  }
+  return n => predicates.some(predicate => predicate(n))
 }
 
-export var otherwise = function() {
-  return true
-}
+export var otherwise = () => true
